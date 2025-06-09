@@ -1,8 +1,8 @@
 # **📊 Análise de Hábitos de Estudantes vs. Desempenho Acadêmico**  
 
-**Curso** | **Instituição**  
-:---: | :---:  
-Pós-graduação em _Data Science_ e Inteligência Artifical | SENAC  
+**Curso:** Pós-graduação em _Data Science_ e Inteligência Artifical
+
+**Instituição:** SENAC
 
 ---
 
@@ -11,7 +11,7 @@ Este repositório contém análises e modelagens sobre como os hábitos de estud
 
 🔗 **[Student Habits vs. Academic Performance](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance)**  
 
-O trabalho está sendo desenvolvido em grupo como parte da pós-graduação em **_Data Science_ e Inteligência Artificial** no **SENAC**.  
+O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina de Python da pós-graduação em **_Data Science_ e Inteligência Artificial** no **SENAC**.  
 
 ---
 
@@ -58,9 +58,6 @@ O trabalho está sendo desenvolvido em grupo como parte da pós-graduação em *
 | Dayane Cristina Santos Ferreira| [@ladyenay](https://github.com/seuuser) | [Perfil LinkedIn](https://www.linkedin.com/in/ladyenay/) |  
 | Francisco Acioli Gollo | [@chicoacioli](https://github.com/user2) | [Perfil LinkedIn](https://www.linkedin.com/in/francisco-acioli-gollo-04467871/) |  
 
-
-
-🔗 **Link do Dataset no Kaggle**: [Student Habits Dataset](https://www.kaggle.com/datasets/jayaantanaath/student-habits-vs-academic-performance)  
 
 
 
