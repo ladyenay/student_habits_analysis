@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder 
-
+import matplotlib.pyplot as plt
 
 def carregar_dados(nomeArquivo):
     dados = None
@@ -14,10 +14,10 @@ def preparar_dados(dados):
     print("\nVISÃO GERAL DOS DADOS: ")
     print(dados.info())
 
-    print("\nVISUALZINDO OS 5 PRIMEIROS REGISTROS: ")
+    print("\nVISUALIZANDO OS 5 PRIMEIROS REGISTROS: ")
     print(dados.head())
 
-    print("\nVISUALZINDO OS 5 ÚLTIMOS REGISTROS: ")
+    print("\nVISUALIZANDO  OS 5 ÚLTIMOS REGISTROS: ")
     print(dados.tail())
 
     print("\nDESCRIÇÃO ESTATÍSTICA DOS DADOS: ")
@@ -29,8 +29,8 @@ def preparar_dados(dados):
     
     print(f"\nVALORES DO DATAFRAME: {dados.values}")
     print(f"\nLINHA x COLUNA: {dados.shape}")
-    print(f"\nTOTAL DE VALORES NULOS: {dados.isnull().sum()}")
-    print(f"\nTIPOS DE DADOS: {dados.dtypes}")
+    print(f"\nTOTAL DE VALORES NULOS:\n{dados.isnull().sum()}")
+    print(f"\nTIPOS DE DADOS:\n{dados.dtypes}")
     
     print(f"\nGÊNERO: {dados['gender'].unique()}") 
     print(f"\nTRABALHA: {dados['part_time_job'].unique()}")
@@ -66,4 +66,5 @@ def transformar_dados(dados):
         for valor, codigo in zip(encoder.classes_, range(len(encoder.classes_))):
             print(f"   {valor} → {codigo}")
 
-    return dados
+    return dados, encoders  
+    
