@@ -24,13 +24,28 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
 
 ## **📂 Estrutura do Repositório**  
 ```
-📦 project_student_habits_academic_performance/
-├── 📄 README.md               # Documentação do projeto
-├── 📄 BibMostlyHarmless.py    # Biblioteca com funções para carregar e processar dados
-├── 📄 main.py                 # Script principal de análise
-├── 📊 data/
-│   └── 📄 student_habits_performance.csv  # Dataset no formato CSV original
-
+📦 student_habits_analysis/
+├── 📄 .gitignore              # Arquivo para ignorar __pycache__/, *.pyc, etc.
+├── 📄 README.md               # Documentação completa do projeto
+├── 📄 main.py                 # Script principal que executa a análise
+├── 📂 bib/                    # Pasta de bibliotecas/modules
+│   ├── 📄 __init__.py         # Tornando a pasta um módulo Python
+│   ├── 📄 processamento.py    # Funções para limpeza e preparação de dados
+│   └── 📄 visualizacao.py     # Funções para geração de gráficos
+├── 📂 data/                   # Pasta de dados
+│   └── 📄 student_habits_performance.csv  # Dataset original
+└── 📂 graficos/               # Pasta com visualizações exportadas
+    ├── 📊 estudante_x_genero_grafico_barra.png
+    ├── 📊 estudante_x_idade_grafico_barra.png
+    ├── 📊 frequencia_aulas_histograma.png
+    ├── 📊 horas_sono_histograma.png
+    ├── 📊 nota_horas_estudo_grafico_dispersao.png
+    ├── 📊 notas_nivel_escolar_parental_boxplot.png
+    ├── 📊 qualidade_dieta_grafico_pizza.png
+    ├── 📊 tempo_medio_estudo_histograma.png
+    ├── 📊 tempo_medio_midias_sociais_histograma.png
+    ├── 📊 tempo_medio_netflix_histograma.png
+    └── 📊 trabalha_meio_periodo_grafico_pizza.png
 ```
 
 ---
@@ -44,7 +59,7 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
 ---
 
 ## **📊 Principais Análises**  
-🔹 **Distribuição de notas por hábito de sono**  
+🔹 **Distribuição de notas por horas de estudo diário**  
 🔹 **Impacto da qualidade da internet no desempenho**  
 🔹 **Relação entre dieta e notas**  
 🔹 **Modelo de regressão para prever desempenho**  
