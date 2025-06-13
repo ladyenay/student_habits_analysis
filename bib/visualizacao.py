@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FixedLocator
 import seaborn as sns
 import statsmodels.api as sm
 from typing import Optional, Dict
@@ -12,7 +13,7 @@ def plot_scatter(
     hue_col: Optional[str] = None,
     title: str = "",
     palette: Optional[Dict] = None,
-    jitter: bool = False,
+    jitter: bool = True,
     alpha: float = 0.7,
     show_regression: bool = True,
     reg_color: Optional[str] = None, 
@@ -152,6 +153,7 @@ def plot_bar_chart(
         ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     if rotate_labels:
+        ax.xaxis.set_major_locator(FixedLocator(range(len(labels))))
         ax.set_xticklabels(labels, rotation=45, ha="right")
 
     plt.tight_layout()
