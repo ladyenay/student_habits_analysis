@@ -38,9 +38,22 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
     ├── 📊 estudante_x_genero_grafico_barra.png
     ├── 📊 estudante_x_idade_grafico_barra.png
     ├── 📊 frequencia_aulas_histograma.png
+    ├── 📊 grafico_comparativo_frequencia_em_aulas.png
+    ├── 📊 grafico_comparativo_frequencia_exercicios.png
+    ├── 📊 grafico_comparativo_horas_de_sono.png
+    ├── 📊 grafico_comparativo_horas_estudo.png
+    ├── 📊 grafico_comparativo_horas_netflix.png
+    ├── 📊 grafico_comparativo_midias_sociais.png
+    ├── 📊 grafico_comparativo_nota.png
+    ├── 📊 grafico_comparativo_quantidade_alunos.png
+    ├── 📊 grafico_comparativo_saude_mental.png
     ├── 📊 horas_sono_histograma.png
+    ├── 📊 nivel_educacao_parental_grafico_pizza.png
+    ├── 📊 nota_exame.png
     ├── 📊 nota_horas_estudo_grafico_dispersao.png
     ├── 📊 notas_nivel_escolar_parental_boxplot.png
+    ├── 📊 participacao_extracurricular_boxplot.png
+    ├── 📊 participacao_extracurricular_grafico_pizza.png
     ├── 📊 qualidade_dieta_grafico_pizza.png
     ├── 📊 tempo_medio_estudo_histograma.png
     ├── 📊 tempo_medio_midias_sociais_histograma.png
