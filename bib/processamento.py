@@ -3,6 +3,7 @@ from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 
 def carregar_dados(nomeArquivo):
+    print("\n\n## CARREGANDO OS DADOS...")
     dados = None
     try:
         dados = pd.read_csv(nomeArquivo, sep=",", encoding="utf8")
@@ -11,6 +12,7 @@ def carregar_dados(nomeArquivo):
     return dados
 
 def preparar_dados(dados):
+    print("\n\n## PREPARANDO OS DADOS...")
     print("\nVISÃO GERAL DOS DADOS: ")
     print(dados.info())
 
@@ -22,10 +24,41 @@ def preparar_dados(dados):
 
     print("\nDESCRIÇÃO ESTATÍSTICA DOS DADOS: ")
     print(dados.describe())
+
+    print("\nDESCRIÇÃO ESTATÍSTICA DOS DADOS: ")
+    print('\ncolumn 2 - age | IDADE')
+    print(dados['age'].describe())
+
+    print('\ncolumn 4 - study_hours_per_day | HORAS DE ESTUDO POR DIA')
+    print(dados['study_hours_per_day'].describe())
+
+    print('\ncolumn 5 - social_media_hours | HORAS EM REDES SOCIAIS')
+    print(dados['social_media_hours'].describe())
+
+    print('\ncolumn 6 - netflix_hours | HORAS NO NETFLIX')
+    print(dados['netflix_hours'].describe())
+
+    print('\ncolumn 8 - attendance_percentage | PORCENTAGEM DE PRESENÇA')
+    print(dados['attendance_percentage'].describe())
+
+    print('\ncolumn 9 - sleep_hours | HORAS DE SONO')
+    print(dados['sleep_hours'].describe())
+
+    print('\ncolumn 11 - exercise_frequency | FREQUÊNCIA DE EXERCÍCIO')
+    print(dados['exercise_frequency'].describe())
+
+    print('\ncolumn 14 - mental_health_rating | AVALIAÇÃO DA SAÚDE MENTAL')
+    print(dados['mental_health_rating'].describe())
+
+    print('\ncolumn 16 - exam_score | NOTA DA PROVA')
+    print(dados['exam_score'].describe())
     
     print(f"\nTOTAL DE DADOS DUPLICADOS: {dados.duplicated().sum()}")
     if dados.duplicated().sum() != 0:
         print(dados.duplicated())
+
+    print(f"\nPreenchendo valores da coluna 12 (parental_education_level) de None para Untold")
+    dados['parental_education_level'] = dados['parental_education_level'].fillna("Untold")
     
     print(f"\nVALORES DO DATAFRAME: {dados.values}")
     print(f"\nLINHA x COLUNA: {dados.shape}")
@@ -42,6 +75,7 @@ def preparar_dados(dados):
     return dados
 
 def transformar_dados(dados):
+    print("\n\n## TRANSFORMANDO OS DADOS...")
     dados.drop_duplicates(inplace=True)
     dados.drop(columns=["student_id"], inplace=True)
     dados.dropna(inplace=True)
@@ -66,5 +100,6 @@ def transformar_dados(dados):
         for valor, codigo in zip(encoder.classes_, range(len(encoder.classes_))):
             print(f"   {valor} → {codigo}")
 
-    return dados, encoders  
+    print(f"\nTIPOS DE DADOS APÓS TRANSFORMAÇÃO:\n{dados.dtypes}")
     
+    return dados, encoders

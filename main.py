@@ -94,3 +94,130 @@ if dados is not None:
     #     title="Participação Extracurricular",
     #     encoder=encoders["extracurricular_participation"]
     # )
+
+    media_geral = dados_transformados['exam_score'].mean()
+
+    media_por_age = dados_transformados.groupby('age')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Idade ---")
+    media_por_age.loc[len(media_por_age)] = ['Total', media_geral]
+    print(media_por_age)
+    print("\n" + "="*30 + "\n")
+
+    media_por_genero = dados_transformados.groupby('gender')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Gênero ---")
+    media_por_genero.loc[len(media_por_genero)] = ['Total', media_geral]
+    print(media_por_genero)
+    print("\n" + "="*30 + "\n")
+
+    media_por_study_hours_per_day = dados_transformados.groupby('study_hours_per_day')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Horas de Estudo por Dia ---")
+    media_por_study_hours_per_day.loc[len(media_por_study_hours_per_day)] = ['Total', media_geral]
+    print(media_por_study_hours_per_day)
+    print("\n" + "="*30 + "\n") 
+
+    media_por_social_media_hours = dados_transformados.groupby('social_media_hours')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Horas em Redes Sociais ---")
+    media_por_social_media_hours.loc[len(media_por_social_media_hours)] = ['Total', media_geral]
+    print(media_por_social_media_hours)
+    print("\n" + "="*30 + "\n")
+
+    media_por_netflix_hours = dados_transformados.groupby('netflix_hours')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Horas no Netflix ---")
+    media_por_netflix_hours.loc[len(media_por_netflix_hours)] = ['Total', media_geral]
+    print(media_por_netflix_hours)
+    print("\n" + "="*30 + "\n")
+
+    media_por_part_time_job = dados_transformados.groupby('part_time_job')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Trabalho de Meio Período ---")
+    media_por_part_time_job.loc[len(media_por_part_time_job)] = ['Total', media_geral]
+    print(media_por_part_time_job)
+    print("\n" + "="*30 + "\n")
+
+    media_por_attendance = dados_transformados.groupby('attendance_percentage')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Frequência de Presença ---")
+    media_por_attendance.loc[len(media_por_attendance)] = ['Total', media_geral]
+    print(media_por_attendance)
+    print("\n" + "="*30 + "\n")
+
+    media_por_sleep_hours = dados_transformados.groupby('sleep_hours')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Horas de Sono ---")
+    media_por_sleep_hours.loc[len(media_por_sleep_hours)] = ['Total', media_geral]
+    print(media_por_sleep_hours)
+    print("\n" + "="*30 + "\n")
+
+    media_por_diet_quality = dados_transformados.groupby('diet_quality')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Qualidade da Dieta ---")
+    media_por_diet_quality.loc[len(media_por_diet_quality)] = ['Total', media_geral]
+    print(media_por_diet_quality)
+    print("\n" + "="*30 + "\n")
+    
+    media_por_exercise_frequency = dados_transformados.groupby('exercise_frequency')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Frequência de Exercício ---")
+    media_por_exercise_frequency.loc[len(media_por_exercise_frequency)] = ['Total', media_geral]
+    print(media_por_exercise_frequency)
+    print("\n" + "="*30 + "\n")
+
+    media_por_parental_education_level = dados_transformados.groupby('parental_education_level')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Nível de Educação Parental ---")
+    media_por_parental_education_level.loc[len(media_por_parental_education_level)] = ['Total', media_geral]
+    print(media_por_parental_education_level)
+    print("\n" + "="*30 + "\n")
+
+    media_por_internet_quality = dados_transformados.groupby('internet_quality')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Qualidade da Internet ---")
+    media_por_internet_quality.loc[len(media_por_internet_quality)] = ['Total', media_geral]
+    print(media_por_internet_quality)
+    print("\n" + "="*30 + "\n")
+
+    media_por_mental_health = dados_transformados.groupby('mental_health_rating')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Saúde Mental ---")
+    media_por_mental_health.loc[len(media_por_mental_health)] = ['Total', media_geral]
+    print(media_por_mental_health)
+    print("\n" + "="*30 + "\n")
+
+    media_por_extracurricular_participation = dados_transformados.groupby('extracurricular_participation')['exam_score'].mean().reset_index()
+    print("\n--- Médias Calculadas por Participação Extracurricular ---")
+    media_por_extracurricular_participation.loc[len(media_por_extracurricular_participation)] = ['Total', media_geral]
+    print(media_por_extracurricular_participation)
+    print("\n" + "="*30 + "\n")
+
+    # Visualização dos dados
+    print("\n\n## GERANDO OS GRAFICOS DOS DADOS...")
+    v.plot_bar_chart(
+    dados,
+    group_column="gender",
+    encoder=encoders["gender"],
+    colors=["red", "blue", "purple"],
+    title="Estudante x Gênero"
+    )
+   
+    v.plot_histogram(dados, column="sleep_hours", title="Horas de Sono")
+
+    v.plot_pie(
+        data=dados,
+        column="diet_quality",
+        encoder_dict=encoders,
+        title="Qualidade da Dieta",
+        colors=["blue","green","red"]
+    )
+
+    v.plot_scatter(
+    dados, 
+    "study_hours_per_day", 
+    "exam_score",
+    title="Notas vs Horas de Estudo"
+    )
+
+    v.plot_boxplot(
+        data=dados,
+        x_col="parental_education_level",
+        y_col="exam_score",
+        title="Notas por Nível Educacional dos Pais",
+        encoder=encoders["parental_education_level"]
+    )
+
+    v.plotar_grafico_barras_linha_genero(media_por_genero, media_geral)
+
+    v.plotar_grafico_linha_frequencia(media_por_attendance, media_geral)
+
+    v.plotar_grafico_linhas_study_hours(media_por_study_hours_per_day, media_geral)
