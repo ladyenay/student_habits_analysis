@@ -53,16 +53,22 @@ if dados is not None:
         mental_health_rating_median=('mental_health_rating', 'median'),
         social_media_hours_mean=('social_media_hours', 'mean')
     ).round(1)
-
     print(comparacao)
 
-    # v.plot_bar_chart(
-    # dados,
-    # group_column="gender",
-    # encoder=encoders["gender"],
-    # colors=["red", "blue", "purple"],
-    # title="Estudante x Gênero"
-    # )
+    v.plot_comparativo_grupos(
+        comparacao=comparacao,
+        variaveis=['sleep_hours_mean'],
+        title="Comparação de Hora de Sono por Grupo de Desempenho",
+        palette="mako", 
+        rotacao_x=30
+    )
+    v.plot_bar_chart(
+    dados,
+    group_column="gender",
+    encoder=encoders["gender"],
+    colors=["red", "blue", "purple"],
+    title="Estudante x Gênero"
+    )
    
     # v.plot_histogram(dados, column="exam_score", title="Nota Exame")
 

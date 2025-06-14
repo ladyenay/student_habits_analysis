@@ -196,3 +196,59 @@ def plot_pie(data, column, encoder_dict=None, title="Gráfico de Pizza", colors=
     plt.title(title)
     plt.tight_layout()
     plt.show()
+
+def plot_comparativo_grupos(
+    comparacao: pd.DataFrame,
+    variaveis: list,
+    title: str = "Comparação entre Grupos de Desempenho",
+    figsize: tuple = (12, 6),
+    palette: str = "viridis",
+    rotacao_x: int = 45,
+    decimal_places: int = 1,
+):
+
+    plt.figure(figsize=figsize)
+    
+    dados_plot = comparacao[variaveis].reset_index()
+    
+    dados_plot.columns = [col.replace("_mean", "").replace("_median", "") for col in dados_plot.columns]
+
+    dados_plot = dados_plot.melt(
+        id_vars="grupo_desempenho",
+        var_name="variavel",
+        value_name="valor"
+    )
+    dados_plot = dados_plot[~dados_plot["variavel"].astype(str).str.contains("0.0")] 
+
+    ax = sns.barplot(
+        data=dados_plot,
+        x="variavel",
+        y="valor",
+        hue="grupo_desempenho",
+        palette=palette,
+    )
+
+    for p in ax.patches:
+        height = p.get_height()
+        if not pd.isna(height):
+            ax.annotate(
+                f"{height:.{decimal_places}f}",
+                (p.get_x() + p.get_width() / 2., height),
+                ha='center',
+                va='center',
+                xytext=(0, 5),
+                textcoords='offset points',
+                fontsize=9,
+                color='black'
+            )
+    
+    plt.title(title, fontsize=14, pad=20)
+    plt.ylabel("Valor Médio/Mediano")
+    plt.xticks(rotation=rotacao_x, ha="right")
+    plt.legend(title="Grupo de Desempenho", bbox_to_anchor=(1.05, 1), loc="upper left")
+    plt.grid(axis="y", linestyle="--", alpha=0.3)
+
+    ax.set_xticklabels([label.get_text().replace("0.0", "").strip() for label in ax.get_xticklabels()])
+    
+    plt.tight_layout()
+    plt.show()
