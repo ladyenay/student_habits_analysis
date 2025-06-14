@@ -44,7 +44,7 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
 ### **Pré-requisitos**  
 - IDE (utilizamos o VS Code)
 - Python 3.8+
-- Bibliotecas: `pandas`, `scikit-learn`, `matplotlib`, `seaborn`  
+- Bibliotecas: `pandas`, `scikit-learn`, `matplotlib`, `seaborn` , `sklearn`, `numpy`, `statsmodels`, `typing`
 
 ---
 
