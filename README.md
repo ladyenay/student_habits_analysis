@@ -49,10 +49,9 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
 ---
 
 ## **📊 Principais Análises**  
-🔹 **Distribuição de notas por horas de estudo diário**  
-🔹 **Impacto da qualidade da internet no desempenho**  
-🔹 **Relação entre dieta e notas**  
-🔹 **Modelo de regressão para prever desempenho**  
+🔹 **Distribuição de Notas x Variáveis Independentes**  
+🔹 **Gráficos Comparativos de Grupo de Desemepnho e Hábitos**  
+🔹 **Nota Média Geral x Média de Nota Gênero**  
 
 ---
 
