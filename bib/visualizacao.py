@@ -254,47 +254,30 @@ def plot_comparativo_grupos(
     plt.show()
 
 def plotar_grafico_barras_linha_genero(media_por_genero, media_geral):
-    # Criação do Gráfico com Barras e Linha
     plt.figure(figsize=(10, 6))
 
-    # Criando o gráfico de barras para as médias por gênero
-    # Usamos apenas as 3 primeiras linhas do DataFrame media_por_genero
     bar_labels = ['Mulher', 'Homem', 'Indefinido']
-    bar_values = media_por_genero['exam_score'].tolist()[:-1]  # Excluindo a última linha que é 'Total'
-
+    bar_values = media_por_genero['exam_score'].tolist()[:-1] 
     bars = plt.bar(bar_labels, bar_values, color=['skyblue', 'lightcoral', 'lightgreen'])
 
-    # Adicionando a linha contínua para a média geral
-    # Vamos desenhar a linha através de todo o gráfico
     plt.axhline(y=media_geral, color='purple', linestyle='--', linewidth=2, label=f'Média Geral: {media_geral:.2f}')
-
-    # Adicionando rótulos e título
     plt.xlabel('Gênero', fontsize=12)
     plt.ylabel('Média da Nota', fontsize=12)
     plt.title('Média de Notas por Gênero e Média Geral', fontsize=14, fontweight='bold')
     plt.ylim(0, 100)
 
-    # Adicionando o valor exato da média em cima de cada barra
     for bar in bars:
         yval = bar.get_height()
         plt.text(bar.get_x() + bar.get_width()/2, yval + 0.1, round(yval, 2), ha='center', va='bottom', fontsize=10)
-
-    # Adicionando uma legenda para a linha da média geral
     plt.legend()
-
-    # Personalizando o grid
     plt.grid(axis='y', linestyle='--', alpha=0.7)
-
     plt.tight_layout()
     plt.show()
 
 def plotar_grafico_linha_frequencia(media_por_attendance, media_geral):
-    # Criação do Gráfico de Linha para Frequência de Presença
     plt.figure(figsize=(10, 6))
-
-    # Criando o gráfico de linha para as médias por frequência de presença
     line_labels = media_por_attendance['attendance_percentage'].tolist()[:-1]
-    line_values = media_por_attendance['exam_score'].tolist()[:-1]  # Excluindo a última linha que é 'Total'
+    line_values = media_por_attendance['exam_score'].tolist()[:-1]  
     plt.plot(line_labels, line_values, marker='o', color='blue', label='Média por Frequência')
     plt.axhline(y=media_geral, color='purple', linestyle='--', linewidth=2, label=f'Média Geral: {media_geral:.2f}')
     plt.xlabel('Frequência de Presença (%)', fontsize=12)
@@ -308,10 +291,7 @@ def plotar_grafico_linha_frequencia(media_por_attendance, media_geral):
     plt.show()
 
 def plotar_grafico_linhas_study_hours(media_por_study_hours_per_day, media_geral):
-    # Criação do Gráfico de Linha para Horas de Estudo por Dia
     plt.figure(figsize=(10, 6))
-
-    # Criando o gráfico de linha para as médias por horas de estudo por dia
     line_labels = media_por_study_hours_per_day['study_hours_per_day'].tolist()[:-1]
     line_values = media_por_study_hours_per_day['exam_score'].tolist()[:-1]
     plt.plot(line_labels, line_values, marker='o', color='blue', label='Média por Horas de Estudo')
@@ -320,10 +300,10 @@ def plotar_grafico_linhas_study_hours(media_por_study_hours_per_day, media_geral
     plt.ylabel('Média da Nota', fontsize=12)
     plt.title('Média de Notas por Horas de Estudo por Dia e Média Geral', fontsize=14, fontweight='bold')
     plt.ylim(10, 110)
-    # Acrescenta mais marcações no eixo x
+
     min_x = int(min(line_labels))
     max_x = int(max(line_labels))
-    plt.xticks(range(min_x, max_x + 1), rotation=45)  # Marcações de 1 em 1 hora
+    plt.xticks(range(min_x, max_x + 1), rotation=45)  
     # plt.xticks()
     plt.legend()
     plt.grid(axis='y', linestyle='--', alpha=0.7)
