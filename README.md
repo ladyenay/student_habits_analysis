@@ -25,17 +25,17 @@ O trabalho está sendo desenvolvido em grupo como parte avaliativa da disciplina
 ## **📂 Estrutura do Repositório**  
 ```
 📦 student_habits_analysis/
-├── 📄 .gitignore              # Arquivo para ignorar __pycache__/, *.pyc, etc.
-├── 📄 README.md               # Documentação completa do projeto
-├── 📄 main.py                 # Script principal que executa a análise
-├── 📂 bib/                    # Pasta de bibliotecas/modules
-│   ├── 📄 __init__.py         # Tornando a pasta um módulo Python
-│   ├── 📄 processamento.py    # Funções para limpeza e preparação de dados
-│   └── 📄 visualizacao.py     # Funções para geração de gráficos
-├── 📂 data/                   # Pasta de dados
+├── 📂 bib/                                # Pasta de bibliotecas/modules
+│   ├── 📄 __init__.py                     # Tornando a pasta um módulo Python
+│   ├── 📄 processamento.py                # Funções para limpeza e preparação de dados
+│   └── 📄 visualizacao.py                 # Funções para geração de gráficos
+├── 📂 data/                               # Pasta de dados
 │   └── 📄 student_habits_performance.csv  # Dataset original
-└── 📂 graficos/               # Pasta com visualizações exportadas
-
+├── 📂 graficos/                           # Pasta com visualizações exportadas
+├── 📄 .gitignore                          # Arquivo para ignorar __pycache__/, *.pyc, etc.
+├── 📄 main.py                             # Script principal que executa a análise
+├── 📄 README.md                           # Documentação completa do projeto
+└── 📄 student_habits_analysis.pdf         # Relatório com resultados para a apresentação
 ```
 
 ---
